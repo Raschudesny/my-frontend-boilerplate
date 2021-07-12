@@ -60,7 +60,7 @@ const config = {
     path: path.resolve(BUNDLE_OUTPUT_DIR),
   },
   optimization: {
-    namedChunks: true,
+    chunkIds: 'named',
     runtimeChunk: {
       name: 'manifest',
     },
@@ -84,7 +84,7 @@ module.exports = (env, argv = {mode: 'development'}) => {
 
   if (argv.mode === 'development') {
   	// source map turn on
-  	config.devtool = 'source-map';
+  	config.devtool = 'eval-source-map';
 
   	// watch source files
     config.watch = true;
@@ -106,9 +106,6 @@ module.exports = (env, argv = {mode: 'development'}) => {
 
   } else if (argv.mode === 'production') {
   	 process.env.NODE_ENV = 'production';
-
-  	 //source map turn off
-    config.devtool = '';
 
     if (argv.analyze) {
       // pushing webpack bundle analyzing plugins

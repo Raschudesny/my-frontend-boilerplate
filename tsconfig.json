@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
+    "useDefineForClassFields": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "target": "es5",
@@ -28,10 +29,8 @@
       "es2015.promise",
       "es2016.array.include"
     ],
-
     "noImplicitAny": true,
     "emitDecoratorMetadata": true,
-
     "baseUrl": "./"
   },
   "compileOnSave": true,
@@ -39,5 +38,7 @@
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
